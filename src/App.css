@@ -15,13 +15,48 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.content {
+  display: flex;
+  min-height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 400px;
+  border: 1px solid #dddddd;
+}
+
+table th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  border: 1px solid #dddddd;
+}
+
+table td {
+  border: 1px solid #dddddd;
+}
+
+input[type="text"] {
+  padding: 5px 5px;
+  margin-right: 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+button {
+  padding: 5px 5px;
+  border-radius: 4px;
 }
 
 .App-link {
