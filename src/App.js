@@ -1,5 +1,6 @@
 import './App.css';
 import Todo from './components/Todo';
+import TestUpload from './components/Testupload';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <header className="App-header">
         TODO LIST
       </header>
-      <Todo />
+      <TestUpload />
     </div>
   );
 }

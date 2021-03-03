@@ -1,0 +1,20 @@
+{
+  "formatName": "dexie",
+  "formatVersion": 1,
+  "data": {
+    "databaseName": "exportSample",
+    "databaseVersion": 1,
+    "tables": [
+      {
+        "name": "foos",
+        "schema": "++, id",
+        "rowCount": 0
+      }
+    ],
+    "data": [{
+      "tableName": "foos",
+      "inbound": true,
+      "rows": []
+    }]
+  }
+}
