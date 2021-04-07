@@ -8,6 +8,9 @@ import starttest, {
   checkFileLog,
 } from "../services/dexietest";
 import { ReadDirectory } from "../services/fileService";
+import workercode from "../webWorker/worker";
+import webWorker from "../webWorker/workerSetup";
+import importJson from "../webWorker/importExport";
 
 const TestUpload = () => {
   const start = () => {
@@ -51,6 +54,16 @@ const TestUpload = () => {
     ReadDirectory();
   };
 
+  const webworkerHandler = (e) => {
+    let myworker = new webWorker(importJson);
+
+    myworker.postMessage(e.target.files[0]);
+    myworker.onmessage = (m) => {
+      console.log("msg from worker: ", m.data);
+    };
+    // myworker.postMessage("i am from main");
+  };
+
   return (
     <React.Fragment>
       <div>
@@ -61,6 +74,10 @@ const TestUpload = () => {
       </div>
       <div>
         Import: <input type="file" onChange={onChangeHandler} multiple />
+      </div>
+      <div>
+        Import through web-worker:
+        <input type="file" onChange={webworkerHandler} multiple />
       </div>
       <div>
         <button id="start" type="submit" onClick={createdata}>
